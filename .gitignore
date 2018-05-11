@@ -1,0 +1,11 @@
+# Ignore binary files
+bin/
+
+# Ignore Nim cache
+nimcache
+
+# Ignore log folder
+logs/
+
+# Ignore macOS folders settings
+.DS_Store
