@@ -15,5 +15,5 @@ Save the API key and the API secret respectively in the `credentials.nim` file.
 
 ## Contributing
 Whenever creating a Pull Request, remember to ignore the `credentials.nim` file! If you want to be sure not to forget open the terminal in the main folder where the forked library is and type:  
-`git update-index --assume-unchanged binance/credentials.nim`  
+`git update-index --assume-unchanged src/binance/credentials.nim`  
 Now `credentials.nim` will be ignored automatically.
