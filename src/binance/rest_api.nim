@@ -12,7 +12,6 @@ import json
 import strutils
 import times
 
-import std/sha1
 import hmac
 
 include credentials
