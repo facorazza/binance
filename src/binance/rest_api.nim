@@ -24,13 +24,13 @@ addHandler(cLog)
 addHandler(fLog)]#
 
 
-var client * = newHttpClient()
+var client* = newHttpClient()
 
-proc getWrapper *(endpoint:string): (int, JsonNode) =
+proc getWrapper*(endpoint:string): (int, JsonNode) =
   #info("GET: "&endpoint)
   let response = client.get(endpoint)
   #debug("Status code: "&response.status)
   if response.status == "200 OK":
     #debug("Body: "&response.body)
     return (200,  parseJson(response.body))
-  (response.status.split(' ')[0].parseInt, newJNull())
+  result = (response.status.split(' ')[0].parseInt, newJNull())
