@@ -9,3 +9,6 @@ logs/
 
 # Ignore macOS folders settings
 .DS_Store
+
+# Ignore keys
+*.key

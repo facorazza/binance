@@ -3,7 +3,7 @@
 _This is still a work in progress, but you are welcome to contribute_
 
 TODO:
-- Secure endpoints
+- Withdrawal API
 - Websocket streams
 
 ## Installation
@@ -11,9 +11,22 @@ TODO:
 
 ## Setup
 Open a Binance account and create an API key.  
-Save the API key and the API secret respectively in the `credentials.nim` file.
+Create two directories called `logs` and `keys` in the same directory where you'll be executing the program from. Inside `keys` create two files called `api.key` and `secret.key`. Save your generated API key in the former and you secret key in the latter.
+
+## Example
+```
+import binance
+
+const apiKey = slurp("./keys/api.key")
+const secretKey = slurp("./keys/secret.key")
+let b = newBinanceApi(apiKey, secretKey)
+
+
+if b.ping():
+  echo "The server is online."
+else:
+  echo "The server is offline."
+```
 
 ## Contributing
-Whenever creating a Pull Request, remember to ignore the `credentials.nim` file! If you want to be sure not to forget open the terminal in the main folder where the forked library is and type:  
-`git update-index --assume-unchanged src/binance/credentials.nim`  
-Now `credentials.nim` will be ignored automatically.
+Please, do!

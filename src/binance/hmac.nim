@@ -1,3 +1,11 @@
+#
+#          Nim's Unofficial Library
+#        (c) Copyright 2018 Federico A. Corazza
+#
+#    See the file "LICENSE", included in this
+#    distribution, for details about the copyright.
+#
+
 import strutils
 import nimSHA2
 
@@ -25,4 +33,5 @@ proc hmac_sha256*(key, data: string): string =
   for x in computeSHA256(i_key_pad & data):
     o_key_pad[block_size + i] = char(x)
     inc(i)
+
   result = toHex(computeSHA256(o_key_pad))

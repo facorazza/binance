@@ -8,7 +8,7 @@
 
 
 type
-  SymbolStatus= enum
+  SymbolStatus {.pure.} = enum
     PreTrading = "PRE_TRADING",
     Trading = "TRADING",
     PostTrading = "POST_TRADING",
@@ -18,11 +18,11 @@ type
     Break = "BREAK"
 
 type
-  SymbolType = enum
+  SymbolType {.pure.} = enum
     Spot = "SPOT"
 
 type
-  OrderStatus = enum
+  OrderStatus {.pure.} = enum
     New = "NEW",
     PartiallyFilled = "PARTIALLY_FILLED",
     Filled = "FILLED",
@@ -32,7 +32,7 @@ type
     Expired = "EXPIRED"
 
 type
-  OrderTypes = enum
+  OrderType {.pure.} = enum
     Limit = "LIMIT",
     Market = "MARKET",
     StopLoss = "STOP_LOSS",
@@ -42,18 +42,18 @@ type
     LimitMaker = "LIMIT_MAKER"
 
 type
-  OrderSide = enum
+  OrderSide {.pure.} = enum
     Buy = "BUY",
     Sell = "SELL"
 
 type
-  TimeInForce = enum
+  TimeInForce {.pure.} = enum
     GoodTillCanceled = "GTC",
     ImmediateOrCancel = "IOC",
     FillOrKill = "FOK"
 
 type
-  CandlestickInterval = enum
+  CandlestickInterval {.pure.} = enum
     CandlestickInterval1Minute = "1m",
     CandlestickInterval3Minutes = "3m",
     CandlestickInterval5Minutes = "5m",
@@ -71,12 +71,18 @@ type
     CandlestickInterval1Month = "1M"
 
 type
-  RateLimitTypes = enum
+  RateLimitTypes {.pure.} = enum
     Requests = "REQUESTS",
     Orders = "ORDERS"
 
 type
-  RateLimitIntervals = enum
+  RateLimitIntervals {.pure.} = enum
     Second = "SECOND",
     Minute = "MINUTE",
     Day = "DAY"
+
+type
+  ResponseType {.pure.} = enum
+    Ack = "ACK",
+    Result = "RESULT",
+    Full = "FULL"
